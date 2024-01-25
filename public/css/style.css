@@ -1,0 +1,144 @@
+:root{
+    --pinks: #550031 !important;
+    --default: #ee6e73 !important;
+}
+
+/* ------------------ General CSS ------------------ */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+.app_body{
+    background-color: #fff;
+
+}
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    overflow: scroll;
+    font-family: 'Raleway', sans-serif;
+}
+main {
+    flex: 1 0 auto;
+    background-color: inherit;
+
+}
+a {
+    outline: none;
+    text-decoration: none;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+a:hover,
+a:active,
+a:focus {
+    outline: none;
+    text-decoration: none;
+}
+h1,
+h2,
+h3 {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+}
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+}
+p {
+    margin: 0;
+    padding: 0;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+/* App style*/
+.round-cir {
+    clip-path: ellipse( 50% 50%);
+}
+.center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Side bar*/
+/* The mySidebar menu */
+.mySidebar {
+    height: 50%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    right: 0;
+    font-size: 1vw;
+    background-color: var(--bdark); /* Black*/
+    overflow-x: scroll; /* Disable horizontal scroll */
+    padding-top: 0rem; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the mySidebar */
+    margin-top: 5.5rem;
+    margin-bottom: 5rem;
+    color: #fff;
+    overflow-y: scroll;
+  }
+  /* Position and style the close button (top right corner) */
+  .mySidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    color: #eee;
+    text-align: center;
+    line-height: 15px;
+    cursor: pointer;
+  }
+  /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s;
+    /*Ifyouwantatransitioneffect*/
+    -webkit-transition: margin-left .5s;
+    -moz-transition: margin-left .5s;
+    -ms-transition: margin-left .5s;
+    -o-transition: margin-left .5s;
+}
+  
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .mySidebar {padding-top: 15px;}
+  .mySidebar a {font-size: 18px;}
+}
+
+.disabled{
+    display: none;
+}
+@media screen and (max-width: 1120px) {
+    .toopart{
+        display: block;
+
+    }
+  }

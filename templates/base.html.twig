@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title>
+			{% block title %}Gestion Plante|
+			{% endblock %}
+		</title>
+		<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+		<meta content="" name="keywords"/>
+		<meta
+		content="" name="description"/>
+		<!-- Favicons -->
+		<link href="img/favicon.ico" rel="icon"/>
+		<link
+		href="img/apple-touch-icon.png" rel="apple-touch-icon"/>
+		<!-- Custom CSS-->
+		<link
+		href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css"/>
+		<!-- Materialise CSS-->
+		<link
+		href="{{ asset('css/materialize.min.css') }}" rel="stylesheet" type="text/css"/>
+		<!-- Material Icons -->
+		<link
+		href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+		<!-- Datatables css -->
+
+		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>"/> {% block stylesheets %}{% endblock %}
+		{% block javascripts %}
+			{% block importmap %}
+				{{ importmap('app') }}
+			{% endblock %}
+		{% endblock %}
+	</head>
+	<body class="app_body">
+		{% block body %}
+			{% block header %}{% endblock %}
+			<main id="main" class="app">
+				{% block Content %}{% endblock %}
+			</main>
+			{% block footer %}{% endblock %}
+		{% endblock %}
+
+		<!-- Jquery JS-->
+		<script src="{{ asset('js/jquery-3.7.1.min.js') }}"></script>
+		<!-- Datatables JS-->
+		<!-- Materialise JS-->
+		<script src="{{ asset('js/materialize.min.js') }}"></script>
+		<!-- Custom JS-->
+		<script src="{{ asset('js/script.js') }}"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+			    $('.sidenav').sidenav();
+			});
+		</script>
+		{% block javascript %}
+		{% endblock %}
+	</body>
+</html></script></body></html>

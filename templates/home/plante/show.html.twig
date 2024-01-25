@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Plante{% endblock %}
+
+{% block body %}
+    <h1>Plante</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ plante.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ plante.nom }}</td>
+            </tr>
+            <tr>
+                <th>EspecePlante</th>
+                <td>{{ plante.especePlante }}</td>
+            </tr>
+            <tr>
+                <th>DateAchat</th>
+                <td>{{ plante.dateAchat ? plante.dateAchat|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>ImagePlante</th>
+                <td>{{ plante.imagePlante }}</td>
+            </tr>
+            <tr>
+                <th>IsArrosed</th>
+                <td>{{ plante.isArrosed ? 'Yes' : 'No' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_plante_index') }}">back to list</a>
+
+    <a href="{{ path('app_plante_edit', {'id': plante.id}) }}">edit</a>
+
+    {{ include('plante/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,61 @@
+<div class="navbar-fixed">
+	<nav>
+		<div class="nav-wrapper">
+			<a href="#!" class="brand-logo">GSP</a>
+			<a href="#" data-target="mobile-demo" class="sidenav-trigger">
+				<i class="material-icons">menu</i>
+			</a>
+			<ul class="right hide-on-med-and-dow">
+				{% if app.user %}
+					<li class="active">
+						<a href="{{ path('app_user_home') }}">
+							<i class="material-icons gray">dashboard</i>
+						</a>
+					</li>
+					<li>
+						<a href="{{ path('app_user_ajouter_plante') }}">
+							<i class="material-icons">add_circle</i>
+						</a>
+					</li>
+					<li>
+						<a class="pinks" href="{{ path('app_logout') }}">
+							<i class="material-icons pink-text">logout</i>
+						</a>
+					</li>
+				{% else %}
+					<li>
+						<a class="pinks" href="{{ path('app_login') }}">
+							<i class="material-icons pink-text">login</i>
+						</a>
+					</li>
+				{% endif %}
+			</ul>
+		</div>
+	</nav>
+	<ul class="sidenav" id="mobile-demo">
+		{% if app.user %}
+			<li class="active">
+				<a href="{{ path('app_user_home') }}">
+					<i class="material-icons gray">dashboard</i>
+				</a>
+			</li>
+			<li>
+				<a href="{{ path('app_user_ajouter_plante') }}">
+					<i class="material-icons">add_circle</i>
+				</a>
+			</li>
+			<li>
+				<a class="pinks" href="{{ path('app_logout') }}">
+					<i class="material-icons pink-text">logout</i>
+				</a>
+			</li>
+		{% else %}
+			<li>
+				<a class="pinks" href="{{ path('app_login') }}">
+					<i class="material-icons pink-text">login</i>
+				</a>
+			</li>
+		{% endif %}
+	</ul>
+
+</div>
