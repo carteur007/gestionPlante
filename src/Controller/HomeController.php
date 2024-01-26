@@ -6,9 +6,7 @@ use App\Entity\Besoin;
 use App\Entity\Historique;
 use App\Entity\Plante;
 use App\Entity\User;
-use App\Form\PlanteBesoinType;
 use App\Form\PlanteType;
-use App\Repository\PlanteRepository;
 use App\Service\Notification;
 use App\Service\Uploader;
 use DateTimeImmutable;
@@ -99,7 +97,6 @@ class HomeController extends AbstractController
     /**
      * Action permettant Modifier une plante
      * 
-     * @param mixed|Notification $notifier,
      * @param mixed|Request $request
      * @param mixed|Plante $plante, 
      * @param mixed|EntityManagerInterface $entityManager,
@@ -107,14 +104,12 @@ class HomeController extends AbstractController
      */
     #[Route('/plante/{id}/edit', name: 'editer_plante', methods: ['GET', 'POST'])]
     public function definirBesoin(
-        Notification $notifier,
         Request $request,
         Plante $plante,
         EntityManagerInterface $entityManager
     ): Response {
         $form = $this->createForm(PlanteType::class, $plante);
         $form->handleRequest($request);
-        $user = $this->getUser();
 
         //validation du formulaire, enregistrement de la plante et notification
         if ($form->isSubmitted() && $form->isValid()) {
