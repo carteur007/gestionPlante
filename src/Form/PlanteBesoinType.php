@@ -11,6 +11,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -21,7 +22,9 @@ class PlanteBesoinType extends AbstractType
     {
         $builder
             ->add('nom')
-            ->add('especePlante') 
+            ->add('especePlante',TextType::class,[
+                'label' => 'Espèce de la plante'
+            ]) 
             ->add('dateAchat')
             ->add('imagePlante', FileType::class, [
                 'label' => 'Image(pnp,jpg,jpeg)',
@@ -37,9 +40,11 @@ class PlanteBesoinType extends AbstractType
                 ],
             ])
             ->add('quantiteEau',IntegerType::class,[
+                'label' => 'Quantié en Eau',
                 'mapped'=> false,
             ])
             ->add('frecArrosage',IntegerType::class,[
+                'label' => 'Fréquence d\'Arrosage',
                 'mapped'=> false,
             ]);
             /*

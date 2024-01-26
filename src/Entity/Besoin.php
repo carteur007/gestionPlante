@@ -5,6 +5,13 @@ namespace App\Entity;
 use App\Repository\BesoinRepository;
 use Doctrine\ORM\Mapping as ORM;
 
+/**
+ * Class Besoin
+ * 
+ * @author Saatsa franklin Blerio <saatsafranklin@gmail.com>
+ * @description Analyste programmeur/developpeur full-strack
+ *
+ */
 #[ORM\Entity(repositoryClass: BesoinRepository::class)]
 class Besoin
 {

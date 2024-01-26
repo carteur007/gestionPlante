@@ -36,6 +36,15 @@
 		{% block body %}
 			{% block header %}{% endblock %}
 			<main id="main" class="app">
+				{% for label, messages in app.flashes %}
+					<div class="row center-align">
+						{% for message in messages %}
+							<div class="col s6 offset-s3 {{ label }} white-text" style="padding: 1vw;">
+								{{ message }}
+							</div>
+						{% endfor %}
+					</div>
+				{% endfor %}
 				{% block Content %}{% endblock %}
 			</main>
 			{% block footer %}{% endblock %}
@@ -49,11 +58,10 @@
 		<!-- Custom JS-->
 		<script src="{{ asset('js/script.js') }}"></script>
 		<script type="text/javascript">
-			$(document).ready(function(){
-			    $('.sidenav').sidenav();
-			});
+			$(document).ready(function () {
+$('.sidenav').sidenav();
+});
 		</script>
-		{% block javascript %}
-		{% endblock %}
+		{% block javascript %}{% endblock %}
 	</body>
 </html></script></body></html>

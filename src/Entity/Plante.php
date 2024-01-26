@@ -8,6 +8,13 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
+/**
+ * Class Plante
+ * 
+ * @author Saatsa franklin Blerio <saatsafranklin@gmail.com>
+ * @description Analyste programmeur/developpeur full-strack
+ *
+ */
 #[ORM\Entity(repositoryClass: PlanteRepository::class)]
 class Plante
 {

@@ -9,6 +9,7 @@ use Doctrine\ORM\QueryBuilder;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -19,7 +20,9 @@ class PlanteType extends AbstractType
     {
         $builder
             ->add('nom')
-            ->add('especePlante') 
+            ->add('especePlante', TextType::class, [
+                'label' => 'Espèce de la plante'
+            ])
             ->add('dateAchat')
             ->add('imagePlante', FileType::class, [
                 'label' => 'Image(pnp,jpg,jpeg)',
@@ -28,7 +31,7 @@ class PlanteType extends AbstractType
                 'constraints' => [
                     new File([
                         'maxSize' => '10M',
-                        'mimeTypes' => ['image/png','image/jpg','image/jpeg'],
+                        'mimeTypes' => ['image/png', 'image/jpg', 'image/jpeg'],
                         'maxSizeMessage' => 'La taille du fichier ne peux depasse 10M',
                         'mimeTypesMessage' => 'Formats acceptes(png,jpeg,jpg)',
                     ])

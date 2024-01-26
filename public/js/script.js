@@ -31,7 +31,7 @@ $(document).ready(function () {
 			};
 			$.ajax(option).done(function (data) {
 				console.log(`MESSAGE: ${data.message}`);
-				//location.reload();
+				location.reload();
 			});
 		} catch (error) {
 			console.log(`MARQUER_PLANTE: ${error.message}`);

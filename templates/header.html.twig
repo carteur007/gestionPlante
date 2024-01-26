@@ -1,7 +1,10 @@
 <div class="navbar-fixed">
 	<nav>
 		<div class="nav-wrapper">
-			<a href="#!" class="brand-logo">GSP</a>
+			<a href="{{ path('app_user_home') }}" class="brand-logo content">
+				<h2 style="margin-left: 7vw;">GSP</h2>
+				<h2 style="margin-left: 7vw;">GSP</h2>
+			</a>
 			<a href="#" data-target="mobile-demo" class="sidenav-trigger">
 				<i class="material-icons">menu</i>
 			</a>
@@ -9,12 +12,12 @@
 				{% if app.user %}
 					<li class="active">
 						<a href="{{ path('app_user_home') }}">
-							<i class="material-icons gray">dashboard</i>
+							<i class="material-icons orange-text">dashboard</i>
 						</a>
 					</li>
 					<li>
 						<a href="{{ path('app_user_ajouter_plante') }}">
-							<i class="material-icons">add_circle</i>
+							<i class="material-icons orange-text">add_circle</i>
 						</a>
 					</li>
 					<li>
@@ -36,12 +39,12 @@
 		{% if app.user %}
 			<li class="active">
 				<a href="{{ path('app_user_home') }}">
-					<i class="material-icons gray">dashboard</i>
+					<i class="material-icons orange-text">dashboard</i>
 				</a>
 			</li>
 			<li>
 				<a href="{{ path('app_user_ajouter_plante') }}">
-					<i class="material-icons">add_circle</i>
+					<i class="material-icons orange-text">add_circle</i>
 				</a>
 			</li>
 			<li>
@@ -59,3 +62,4 @@
 	</ul>
 
 </div>
+<h3 class="center-align app_title" style="margin: 0.5vw;">Application de Gestion des Plantes</h3>

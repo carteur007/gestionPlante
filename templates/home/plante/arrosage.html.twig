@@ -16,11 +16,11 @@
 				<div class="col s12" style="height: 40%;">
 					<div class="card blue-grey darken-1">
 						<div class="card-content white-text">
-							<span class="card-title" style="margin-top: 2vw;margin-bottom: 2vw;">Plante</span>
+							<span class="card-title center-align" style="margin-top: 1vw;">Plante</span>
 							<div class="row">
 								<div class="row">
 									<div class="col s4">
-										<img class="responsive-img" alt="Image de la plante" width="140" src="{{ asset(product_images ~ plante.imagePlante) }}"/>
+										<img class="responsive-img" alt="Image de la plante" width="140" src="{{ asset(images_dir ~ plante.imagePlante) }}"/>
 									</div>
 									<div class="col s8">
 										<form action="#" method="#">
@@ -31,7 +31,7 @@
 												</div>
 												<div class="input-field col s6">
 													<input disabled value="{{ plante.especePlante }}" id="disabled" type="text" class="validate">
-													<label for="disabled">Espece de la Plante</label>
+													<label for="disabled">Espèce de la Plante</label>
 												</div>
 											</div>
 											<div class="row">
@@ -48,33 +48,30 @@
 					</div>
 				</div>
 			</div>
-
 			<div class="col s12 m6 l6">
 				<div class="col s12">
 					<div class="card blue-grey darken-1">
 						<div class="card-content white-text">
-							<span class="card-title">Creer un besoin</span>
+							<span class="card-title center-align">Créer un besoin</span>
 							<form name="form_arrose" action="" method="post">
 								<div class="row">
 									<div class="input-field col s6">
 										<input id="quantiteEau" type="number" class="validate">
-										<label for="quantiteEau">Quantite d'Eau</label>
+										<label for="quantiteEau">Quantité en Eau</label>
 									</div>
 									<div class="input-field col s6">
 										<input id="frecArrosage" type="number" class="validate">
-										<label for="frecArrosage">Frecquence d'Arrosage</label>
+										<label for="frecArrosage">Fréquence d'Arrosage</label>
 									</div>
 								</div>
 								<div class="row">
 									<div class="input-field col s12">
 										<input disabled id="planteId" value="{{ plante.nom }}" id="disabled" type="text" class="validate">
-										<label for="disabled">Plante</label>
+										<label for="disabled">Non de la Plante</label>
 									</div>
 								</div>
-								<div class="row">
-									<div class="col s6 offset-s3">
+								<div class="center-align" style="margin-top:1vw;">
 										<button type="submit" data-p={{ plante.id }} class="marquer btn-flat btn-large orange">Marquer</button>
-									</div>
 								</div>
 							</form>
 						</div>
@@ -86,13 +83,13 @@
 			<div class="col s12 m10 l10 offset-m1 offset-l1">
 				<div class="card blue-grey darken-1">
 					<div class="card-content white-text">
-						<span class="card-title">Historique d'arrosage</span>
+						<span class="card-title center-align">Historique d'arrosage</span>
 						{% if historiques is defined%}
 							<table class="responsive-table striped centered">
 								<thead>
 									<tr>
 										<th>Nom</th>
-										<th>Espece</th>
+										<th>Espèce</th>
 										<th>dateArrosage</th>
 										<th>description</th>
 									</tr>
@@ -107,7 +104,7 @@
 										</tr>
 									{% else %}
 										<tr>
-											<td colspan="7">Vous n'avez pas encore arrose votre plante</td>
+											<td colspan="7">Vous n'avez pas encore arrosé votre plante</td>
 										</tr>
 									{% endfor %}
 								</tbody>

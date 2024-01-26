@@ -1,7 +1,7 @@
 twig:
     file_name_pattern: '*.twig'
     globals:
-        product_images: 'uploads/images/'
+        images_dir: 'uploads/images/'
 
 when@test:
     twig:

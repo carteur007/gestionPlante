@@ -6,6 +6,13 @@ use App\Repository\HistoriqueRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
+/**
+ * Class Historique
+ * 
+ * @author Saatsa franklin Blerio <saatsafranklin@gmail.com>
+ * @description Analyste programmeur/developpeur full-strack
+ *
+ */
 #[ORM\Entity(repositoryClass: HistoriqueRepository::class)]
 class Historique
 {
